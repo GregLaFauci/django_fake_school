@@ -1,0 +1,22 @@
+{% extends "my_app/base.html" %}
+{% block body_block %}
+<h1>Hello and Welcome to the School Site!</h1>
+<h1>Hi, welcome to School System!</h1>
+<h2>Here are your Students:</h2>
+  {% if students %}
+  <ol>
+      {% for student in students %}
+      <li>Student info:</li>
+          <ul>
+          <li>First Name: {{ student.first_name }}</li>
+          <li>Last Name: {{ student.last_name }}</li>
+          <li>Email: {{ student.email }} </li>
+          <li>Subject: {{ student.subject }} </li>
+          </ul>
+        
+        {% endfor %}
+    </ol>
+      {% else %}
+    <p>No Students Entries. Table Not Created.</p>
+  {% endif %}
+{% endblock %}
